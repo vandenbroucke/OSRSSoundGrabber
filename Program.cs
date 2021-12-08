@@ -27,8 +27,6 @@ class Program
     public static async Task<Boolean> DownloadAndStoreFiles(String rootURL, String[] fileNames, String outputFolder)
     {
         HttpClient httpClient = new HttpClient();
-        Boolean result = false;
-
         foreach (String filename in fileNames)
         {
             try
@@ -45,7 +43,7 @@ class Program
                 Console.WriteLine(ex.ToString());
                 return false;
             }
-        }
-        return result;
+        }        
+        return true;
     }
 }
